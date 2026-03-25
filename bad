@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    Array[] Database;
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter your mood on a scale of 1 to 10: ");
+    int moodInp = scan.nextLine();
+    
+    public int mood;
+    public int time;
+    public int weather;
+    public movieInfo(int mood, int time, int weather){
+        this.mood = 
+}
+
+
+
+
+}
