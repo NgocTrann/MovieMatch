@@ -11,6 +11,85 @@ const moodToGenre = {
   excited: 28, // Action
 };
 
+const genreIDs = [
+  {
+    id: 28,
+    name: "Action",
+  },
+  {
+    id: 12,
+    name: "Adventure",
+  },
+  {
+    id: 16,
+    name: "Animation",
+  },
+  {
+    id: 35,
+    name: "Comedy",
+  },
+  {
+    id: 80,
+    name: "Crime",
+  },
+  {
+    id: 99,
+    name: "Documentary",
+  },
+  {
+    id: 18,
+    name: "Drama",
+  },
+  {
+    id: 10751,
+    name: "Family",
+  },
+  {
+    id: 14,
+    name: "Fantasy",
+  },
+  {
+    id: 36,
+    name: "History",
+  },
+  {
+    id: 27,
+    name: "Horror",
+  },
+  {
+    id: 10402,
+    name: "Music",
+  },
+  {
+    id: 9648,
+    name: "Mystery",
+  },
+  {
+    id: 10749,
+    name: "Romance",
+  },
+  {
+    id: 878,
+    name: "Science Fiction",
+  },
+  {
+    id: 10770,
+    name: "TV Movie",
+  },
+  {
+    id: 53,
+    name: "Thriller",
+  },
+  {
+    id: 10752,
+    name: "War",
+  },
+  {
+    id: 37,
+    name: "Western",
+  },
+];
+
 async function getTrending(movieOrTv) {
   const res = await fetch(
     `${BASE_URL}/trending/${movieOrTv}/week?api_key=${API_KEY}`,
@@ -31,7 +110,9 @@ async function getByMood(movieOrTv, mood) {
     console.log(`Movies matching your ${mood} mood:\n`);
 
     for (const movie of data.results) {
-      console.log(`Title: ${movie.title}\nDesc: ${movie.overview}\n\n`);
+      console.log(
+        `Title: ${movie.title}\nGenre: ${movie.genre_ids}\nDesc: ${movie.overview}\n\n`,
+      );
     }
   } else if (movieOrTv == "tv") {
     console.log(`TV series matchiing your ${mood} mood:\n`);
