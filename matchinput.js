@@ -53,13 +53,15 @@ async function main() {
     rl.close();
 
     const userData = {
-        type: type,
-        option: option,
-        mood: mood,
-        search: search,
-        time: time,
-        genre: genre
+        type: type, // TV or Movie
+        option: option, // All 5 Options
+        mood: mood, 
+        search: search, 
+        time: time
     };
+
+    
+    console.log(userData);
 }
 
 main();
