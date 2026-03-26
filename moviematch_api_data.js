@@ -119,7 +119,8 @@ async function getByMood(movieOrTv, mood) {
   }
 }
 
-movieOrTv = "movie";
+
+movieOrTv = "tv";
 mood = "sad";
 
 getByMood(movieOrTv, mood);

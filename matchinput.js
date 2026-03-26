@@ -62,6 +62,17 @@ async function main() {
 
     
     console.log(userData);
+    getData(userData);
+}
+
+async function getData(userData) {
+  if (userData.Type == "tv"){
+    console.log("User chose TV");
+  } else if (userData.Type == "movie") {
+    console.log("User chose Movie");
+
+  }
+
 }
 
 main();
