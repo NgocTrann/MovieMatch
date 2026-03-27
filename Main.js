@@ -131,8 +131,11 @@ async function getTrending(movieOrTv) {
   for (const item of data.results) {
     const title = item.title || item.name; // movies use title, tv uses name
     const date = item.release_date || item.first_air_date;
+    const poster = item.poster_path
+      ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+      : "No poster available";
     console.log(
-      `Title: ${title}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
+      `Title: ${title}\nPoster: ${poster}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
     );
   }
 }
@@ -149,8 +152,11 @@ async function getTopRated(movieOrTv) {
   for (const item of data.results) {
     const title = item.title || item.name;
     const date = item.release_date || item.first_air_date;
+    const poster = item.poster_path
+      ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+      : "No poster available";
     console.log(
-      `Title: ${title}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
+      `Title: ${title}\nPoster: ${poster}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nRating Count: ${item.vote_count}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
     );
   }
 }
@@ -168,8 +174,11 @@ async function getByMood(movieOrTv, genreID, mood) {
   for (const item of data.results) {
     const title = item.title || item.name;
     const date = item.release_date || item.first_air_date;
+    const poster = item.poster_path
+      ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+      : "No poster available";
     console.log(
-      `Title: ${title}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
+      `Title: ${title}\nPoster: ${poster}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
     );
   }
 }
@@ -184,8 +193,11 @@ async function searchMovie(movieOrTv, query) {
   for (const item of data.results) {
     const title = item.title || item.name;
     const date = item.release_date || item.first_air_date;
+    const poster = item.poster_path
+      ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+      : "No poster available";
     console.log(
-      `Title: ${title}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
+      `Title: ${title}\nPoster: ${poster}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
     );
   }
 }
@@ -203,8 +215,11 @@ async function getByTime(movieOrTv, genreID, time) {
   for (const item of data.results) {
     const title = item.title || item.name;
     const date = item.release_date || item.first_air_date;
+    const poster = item.poster_path
+      ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+      : "No poster available";
     console.log(
-      `Title: ${title}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
+      `Title: ${title}\nPoster: ${poster}\nRelease Date: ${date}\nAverage Rating: ${item.vote_average.toFixed(2)}\nGenres: ${getGenreNames(item.genre_ids)}\nDescription: ${item.overview}\n\n`,
     );
   }
 }
