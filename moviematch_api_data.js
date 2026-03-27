@@ -104,21 +104,19 @@ async function getByMood(movieOrTv, mood) {
     `${BASE_URL}/discover/${movieOrTv}?api_key=${API_KEY}&with_genres=${genreID}`,
   );
   const data = await res.json();
-
-  // console.log(data.results);
   if (movieOrTv == "movie") {
     console.log(`Movies matching your ${mood} mood:\n`);
-
     for (const movie of data.results) {
       console.log(
         `Title: ${movie.title}\nGenre: ${movie.genre_ids}\nDesc: ${movie.overview}\n\n`,
       );
     }
   } else if (movieOrTv == "tv") {
-    console.log(`TV series matchiing your ${mood} mood:\n`);
+    console.log(`TV Shows matching your ${mood} mood:\n`);
+    for (const series of data.results)
+      console.log(`Name: ${series.name}\nDesc: ${series.overview}\n\n`);
   }
 }
-
 
 movieOrTv = "tv";
 mood = "sad";
