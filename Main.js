@@ -21,6 +21,9 @@ const moodToGenre = {
   scared: 27, // Horror
   romantic: 10749, // Romance
   excited: 28, // Action
+  relaxed: 35, // Comedy
+  thoughtful: 99, // Documentary
+  intense: 53, // Thriller
 };
 
 const timeToGenre = {
