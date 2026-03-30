@@ -15,6 +15,8 @@ require("dotenv").config();
 const API_KEY = process.env.TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
+const typeVals = ["movie", "tv"];
+
 const moodToGenre = {
   happy: 35, // Comedy
   sad: 18, // Drama
@@ -23,7 +25,7 @@ const moodToGenre = {
   excited: 28, // Action
   relaxed: 35, // Comedy
   thoughtful: 99, // Documentary
-  intense: 53, // Thriller
+  intense: 80, // Thriller
 };
 
 const timeToGenre = {
@@ -234,7 +236,6 @@ async function main() {
   let search;
   let time;
 
-  const typeVals = ["movie", "tv"];
   while (true) {
     type = (
       await ask(
@@ -255,17 +256,6 @@ async function main() {
     console.log("Enter a valid option between 1 and 5.\n");
   }
 
-  const moodVals = [
-    "happy",
-    "sad",
-    "scared",
-    "romantic",
-    "excited",
-    "relaxed",
-    "thoughtful",
-    "intense",
-  ];
-
   while (true) {
     if (option != 3) break;
     mood = (
@@ -273,7 +263,7 @@ async function main() {
         "Enter your mood from the following list: \n\n'happy', 'sad', 'scared', 'romantic', 'excited', 'relaxed', 'thoughtful', 'intense'\n",
       )
     ).toLowerCase();
-    if (moodVals.includes(mood)) break;
+    if (moodToGenre.hasOwnProperty(mood)) break;
     console.log("Enter a valid mood from the list.\n");
   }
 
@@ -285,7 +275,6 @@ async function main() {
     break;
   }
 
-  const timeVals = ["day", "night", "dawn", "dusk"];
   while (true) {
     if (option != 5) break;
     time = (
@@ -293,7 +282,7 @@ async function main() {
         "Enter the current time from the following list: 'day', 'night', 'dawn', 'dusk'\n",
       )
     ).toLowerCase();
-    if (timeVals.includes(time)) break;
+    if (timeToGenre.hasOwnProperty(time)) break;
     console.log("Enter a valid time from the list.\n");
   }
 
